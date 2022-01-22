@@ -14,18 +14,19 @@ with open(args.tdljs[0]) as jsf:
 
 js = json.loads(jsstr)
 for tdl in js:
-    tgs = []
-    txt = ""
-    if 'tags' in tdl.keys():
-        tgs = tdl.pop('tags').split(' ')
-        tgs = "".join(["    -" + tg + "\n" for tg in tgs])
-    if 'text' in tdl.keys():
-        txt = tdl.pop('text')
-    yml = [tk + ": " + tdl.get(tk) + "\n" for tk in tdl.keys()]
-    yml = "---\n" + "".join(yml)
-    if len(tgs):
-        yml += "tags:\n" + tgs
-    yml += "---"
+    if 'type' in tdl.keys() and tdl.get('type') == 'text/x-markdown':
+        tgs = []
+        txt = ""
+        if 'tags' in tdl.keys():
+            tgs = tdl.pop('tags').split(' ')
+            tgs = "".join(["    -" + tg + "\n" for tg in tgs])
+        if 'text' in tdl.keys():
+            txt = tdl.pop('text')
+        yml = [tk + ": " + tdl.get(tk) + "\n" for tk in tdl.keys()]
+        yml = "---\n" + "".join(yml)
+        if len(tgs):
+            yml += "tags:\n" + tgs
+        yml += "---"
 
-    with open("md/" + tdl['title'] + ".md", 'w') as f:
-        f.write(yml + "\n" + txt)
+        with open("md/" + tdl['title'] + ".md", 'w') as f:
+            f.write(yml + "\n" + txt)
