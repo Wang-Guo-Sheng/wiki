@@ -1,7 +1,7 @@
 ---
 created: 20211008163426537
 title: Demo测试页
-modified: 20220121232414707
+modified: 20220122033935438
 tags:
     -test
 ---
@@ -29,11 +29,16 @@ echo "Another line"
 |Footer|Footer|f
 |Caption: Table caption|c
 
+!!!!Image in a borderless table:
 
-!!!!Image in a Table:
-
-|[img[purple_hills.jpeg]]|
+@@.borderless
+|[img width=500px [purple_hills.jpeg]]|
 |Caption: Image caption|c
+@@
 
 Aliquam erat volutpat. Praesent vitae mollis sapien. Mauris magna sapien, fringilla vitae ligula ut, porta fermentum ipsum. Cras condimentum non est et dignissim. Morbi id laoreet risus, vel auctor turpis. Quisque non velit quis massa dignissim vestibulum eget non nunc. Donec enim neque, lobortis ac elit a, tincidunt pretium augue. Suspendisse mollis congue dignissim. Nulla ac magna dui. Donec ultricies, augue non vestibulum efficitur, urna erat pellentesque ex, eget malesuada magna orci et sapien. Aliquam convallis, eros ac ullamcorper dignissim, enim mauris euismod erat, in blandit eros nisi vel libero. Suspendisse pretium porta erat, at tempor dui malesuada nec. Aliquam vel aliquet erat. Donec luctus sem quis massa tempus, sit amet lacinia nibh dapibus.
 
+@@.borderless
+|这是一则图片放在右边，它被存储在其它网站上|[img[https://tiddlywiki.com/favicon.ico]]|
+|这是一则图片放在右边，它被存储在仓库中|[img[img/dont_panic.jpg]]|
+@@
